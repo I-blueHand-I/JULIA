@@ -1,14 +1,12 @@
-# JULIA
-Translate text to Jacquard.
-
 # Installation
-clone the repo
+- clone the repo
 
-## processing
-Install processing first
+- Install processing first
 www.processing.org/download
 
-## who it works
+
+
+# who it works
 
 1. launch
 ```
@@ -21,7 +19,7 @@ void draw(){
 
 2. choose
 
-![Processing](https://fr.wikipedia.org/wiki/Processing#/media/Fichier:Processing_2021_logo.svg)
+![Processing](https://processing.org/static/f53fa9e65ac467e961d10b77b368758a/c1b63/Fig_02_01.png)
 
 3. generate
 
