@@ -63,11 +63,11 @@ void settings() {
 void setup() {
   background(0);
   ///iniatialisation pour le menu
-  julia = loadImage("IMAGES/julia.png");
-  icone = loadImage("IMAGES/icone.png");
-  f = loadFont("IMAGES/Code-45.vlw");
-  f1 = loadFont("IMAGES/Code-30.vlw");
-  f2 = loadFont("IMAGES/Code-20.vlw");
+  julia = loadImage("img/julia.png");
+  icone = loadImage("img/icone.png");
+  f = loadFont("img/Code-45.vlw");
+  f1 = loadFont("img/Code-30.vlw");
+  f2 = loadFont("img/Code-20.vlw");
   //variable pour le blinking text du menu0
   timePast = millis();
   timeInterval = 2200.0f;
