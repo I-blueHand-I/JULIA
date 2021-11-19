@@ -20,6 +20,8 @@ public class JULIA_intro extends PApplet {
 //image menu && initialisation des polices//
 PImage julia;
 PImage icone;
+PImage carte1;
+PImage carte2;
 PFont f;
 PFont f1;
 PFont f2;
@@ -58,34 +60,38 @@ byte b[];//données du texte
 // Declare 2D array
 int[][] myArray = new int[colls][rows];
 ///////////////////
-//boolean pour tourner les pages de fichiers dans la console
-boolean next_page =false; //à developper
 //boolean run carte
+boolean run24C = true; //variable bool qui permet de lancer le programme de carte 24 colonnes
+boolean run40C = true; //variable bool qui permet de lancer le programme de carte 40 colonnes
 boolean run_carte = true;
 boolean run_translate = false;
 boolean run_findText = false;
+//Variable fonction TypeCard
+String typing1 ="";
+String saved1 = "";
 //variable de la fonction list
 String len_data; // String pour eviter les bugs lors de l'entrée du numéro de fichier
 String typing = ""; // Variable du texte tapé
 String saved = ""; //variable convertie en entier : string -> INT
 
-int number;
-
+int number;//variable int du chiffre rentré dans consoleText
+int number1;//variable int du chiffre rentré dans TypeCard
 
 public void settings() {
   H = (rows*cellSizeHeight)+(6*cellSizeHeight);
   W = (colls*cellSizeWidth)+(8*cellSizeWidth);
   size (1000, 800, P3D);
-  //fullScreen();
 }
 public void setup() {
   background(0);
   ///iniatialisation pour le menu
-  julia = loadImage("IMAGES/julia.png");
-  icone = loadImage("IMAGES/icone.png");
-  f = loadFont("IMAGES/Code-45.vlw");
-  f1 = loadFont("IMAGES/Code-30.vlw");
-  f2 = loadFont("IMAGES/Code-20.vlw");
+  julia = loadImage("img/julia.png");
+  icone = loadImage("img/icone.png");
+  carte1 = loadImage("img/24C.png");
+  carte2 = loadImage("img/40C.png");
+  f = loadFont("img/Code-45.vlw");
+  f1 = loadFont("img/Code-30.vlw");
+  f2 = loadFont("img/Code-20.vlw");
   //variable pour le blinking text du menu0
   timePast = millis();
   timeInterval = 2200.0f;
@@ -99,14 +105,17 @@ public void draw() {
     case 0 :
       menu();
       break;
-    case 11 :
+    case 1 :
       explication();
       break;
-    case 1 :
+    case 2 :
+      TypeCard();
+      break;
+    case 3 :
       consoleText();
-        if (run_translate == true){
+      if (run_translate == true){
           translateText();
-        }
+      }
       break;
   }
 }
@@ -142,12 +151,29 @@ public void explication() {
   fill(255);
   text("Julia est un programme developpé en 2021.\nSon objectif est de traduire le texte de votre choix\nen Jacquard de deux couleurs.\nPlacez votre fichier .txt\ndans le dossier data de l'application.\nAppuyez sur espace pour continuer.",100,350);
 }
+public void TypeCard() {
+  background(0);
+  textFont(f1);
+  fill(255);
+  //display text & images des différents type de carte
+  text("1 : carte 24 colonnes",250,200);
+  image(carte1,350,230);
+  text("2 : carte 40 colonnes",250,480);
+  image(carte2,350,510);
+  text("Type de carte : " +typing1 ,520,50);
+}
 //fonction qui permet de rentrer le text à traduire
 public void consoleText(){
   background(0);
   fill(255);
   textFont(f2);
   text("Entrez le numéro de votre fichier\net appuyez sur ENTER pour générer\nvotre carte perforée.",100,700);
+  if (number1 ==1) { //bool qui definie quel type de carte va etre créee
+    run40C = false;
+    }
+  else if (number1 ==2){ //bool qui definie quel type de carte va etre créee
+    run24C = false;
+    }
   list();
 }
 //fonction qui lance la réalisation de la carte perforée////
@@ -155,13 +181,23 @@ public void translateText(){
   background(0);
   fill(255);
   textFont(f2);
-  image(icone,0,370); //display image de mami Julia
-  text("Vous avez choisi :"+input0,70,100);
-  text("Votre carte perforée est dans \nle dossier SVG de l'application.\nLe fichier SVG s'appelle Julia.svg\nVous pouvez utiliser ce fichier pour la découpeuse laser\npour tracer votre carte.\nUtilisez du film polyester en feuille.\nVous en trouverez chez rougié et plé.\nUne fois découpée,\nil faudra insérer la carte dans le métier Jacquard.\nEnfin, demandez à Clément de vous expliquer la suite. ",70,150);
-  text("Merci d'avoir utilisé Julia !",280,400);
+  image(icone,0,330); //display image de mami Julia
+  text("Vous avez choisi :"+input0,70,80);
+  text("Votre carte perforée est dans \nle dossier SVG de l'application.\nLe fichier SVG s'appelle Julia.svg\nVous pouvez utiliser ce fichier pour la découpeuse laser\npour tracer votre carte.\nUtilisez du film polyester en feuille.\nVous en trouverez chez rougié et plé.\nUne fois découpée,\nil faudra insérer la carte dans le métier Jacquard.\nEnfin, demandez à Clément de vous expliquer la suite. ",70,120);
+  text("Merci d'avoir utilisé Julia !",300,370);
   text("Appuez sur ECHAP pour quitter",540,30);
   if (run_carte == true) {
-    matrix();
+    //si 24C est true alors lancer la carte à 24 colonnes
+    if (run24C == true) {
+      matrix();
+    }
+    //si 24C est true alors lancer la carte à 24 colonnes
+    if (run40C == true) {
+      colls = 40;
+      cellSizeWidth =30;
+      cellSizeHeight =30;
+      matrix2();
+    }
   }
 }
 //fonction qui liste tout les fichiers présents dans le data
@@ -171,14 +207,12 @@ public void list(){
   // list the files in the data folder
   String[] filenames = folder.list();
   //variable String global qui prend la valeurs de nombre de fichier dans le data
-  len_data = str(filenames.length);//convertion du length en string
-  if (filenames.length >= 9) len_data = "9"; //si le nombre de fichier est supérieur à 9 alors len_data prend comme valeur "9"
+  /*len_data = str(filenames.length);//convertion du length en string
+  if (filenames.length >= 9) len_data = "9"; //si le nombre de fichier est supérieur à 9 alors len_data prend comme valeur "9"*/
   //DISPLAY tous les noms des fichiers
   for (int i = 0; i < filenames.length; i++) {
     textFont(f1);
     text(i+" : "+filenames[i],100,100+i*40);
-    //textFont(f2);
-    //text("Page suivante\n>>>>>",450,600);
   }
   textFont(f1);
   fill(255);
@@ -193,7 +227,7 @@ public void list(){
       }
    }
 }
-//fonction qui génère la carte perforée
+//fonction qui génère la carte perforée 24 colonnes
 public void matrix() {
    output = createWriter("textB.txt");
     //Charger les caractères du fichier en Binaire dans un nouveau fichier txt;
@@ -261,7 +295,6 @@ public void matrix() {
        }
        count++;
        if (count>=b.length)count=0;
-
        pgr.stroke(c);
        pgr.fill(255);
        pgr.ellipse((cellSizeWidth*4.5f)+(i*cellSizeWidth), (cellSizeHeight*2.5f)+(j*cellSizeHeight), C1, C1);
@@ -274,26 +307,121 @@ public void matrix() {
    run_carte = false;
    ///////////////////////////////////////////////////////
 }
+//fonction qui génère la carte perforée 40 colonnes
+public void matrix2(){
+  output = createWriter("textB.txt");
+   //Charger les caractères du fichier en Binaire dans un nouveau fichier txt;
+  println(input0);
+  byte [] str = loadBytes(input0);
+  for (int i = 0; i < str.length; i++) {
+     output.print(binary(str[i]));
+  }
+  output.flush();  // Writes the remaining data to the file
+  output.close();  // Finishes the file
+  //téléchager les données du texte
+  b = loadBytes(input);
+  //println(b.length);
+  //définir le nombre de lignes////
+  rows = b.length/colls;
+  H = (rows*cellSizeHeight)+(6*cellSizeHeight);
+  W = (colls*cellSizeWidth)+(8*cellSizeWidth);
+  ///Initialisation du tableau///////////
+  char [][] val = new char[colls][rows];
+  /////initialisation de la perforation de la carte///////
+  int count = 0;
+  for (int i = 0; i < colls; i++) {
+    for (int j = 0; j < rows; j++) {
+      val[i][j] = PApplet.parseChar(b[count]);
+      count++;
+      if (count>=b.length)count=0;
+    }
+  }
+  ///////////Dessiner les graphics///////////
+  pgr=createGraphics(width, height, SVG, file);
+  pgr.beginDraw();
+  ///////////Tracage des cercles de la carte perforée)/////////////
+  ////double ligne en haut et en bas pour garder la continuité de la carte////
+  for ( int i =cellSizeWidth*4; i <W-(cellSizeWidth*4); i+=cellSizeWidth ) {
+    pgr.stroke(255,0,0);
+    pgr.fill(255);
+    pgr.ellipse (i+cellSizeWidth/2, cellSizeHeight/2, C2, C2);
+    pgr.ellipse (i+cellSizeWidth/2, cellSizeHeight*1.5f, C2, C2);
+    pgr.ellipse (i+cellSizeWidth/2, cellSizeHeight*2.5f, C2, C2);
+    pgr.ellipse (i+cellSizeWidth/2, H-(cellSizeHeight/2), C2, C2);
+    pgr.ellipse (i+cellSizeWidth/2, H-(cellSizeHeight*1.5f), C2, C2);
+    pgr.ellipse (i+cellSizeWidth/2, H-(cellSizeHeight*2.5f), C2, C2);
+  }
+  //Colonnes de la carte perforée exterieur a la matrice///
+  for ( int i =0; i <H-(cellSizeHeight/2); i+=cellSizeHeight) {
+    pgr.stroke(255,0,0);
+    pgr.fill(255);
+    pgr.ellipse (cellSizeWidth*2.5f, i+cellSizeHeight/2, C1, C1);
+    pgr.ellipse (W-(cellSizeWidth*2.5f), i+cellSizeHeight/2, C1, C1);
+  }
+  //colonnes de points pour engager la carte///
+  for ( int i =-cellSizeHeight/2; i <H; i+=cellSizeWidth ) {
+    pgr.stroke(255,0,0);
+    pgr.fill(255);
+    pgr.ellipse (-cellSizeWidth/8, i+cellSizeWidth, C2, C2);
+    pgr.ellipse (W+cellSizeWidth/8, i+cellSizeWidth, C2, C2);
+  }
+  ////////Perforation de la carte en fonction du texte/////////////
+  count = 0;
+  for (int i = 0; i < colls; i++) {
+    for (int j = 0; j < rows; j++) {
+      val[i][j] = PApplet.parseChar(b[count]);
+      if (val[i][j]=='0') {
+         c=color(255,0,0);
+      } else {
+         c=color(255,255,255);
+      }
+      count++;
+      if (count>=b.length)count=0;
+
+      pgr.stroke(c);
+      pgr.fill(255);
+      pgr.ellipse((cellSizeWidth*4.5f)+(i*cellSizeWidth), (cellSizeHeight*3.5f)+(j*cellSizeHeight), C2, C2); //xpos,ypos,C1,C1
+    }
+  }
+  /////////////////////////////////////////////////////////
+  /////////////Finir de dessinder les graphiques///////////
+  pgr.dispose();
+  pgr.endDraw();
+  run_carte =false;
+  ///////////////////////////////////////////////////////
+}
 public void keyPressed(){
   //de menu0 -> explication
   if (run==0){
     if (key=='\n'){
-      run=11;
+      run=1;
     }
   }
   //de explication -> input
-  if (run==11){
+  if (run==1){
     if (key ==' ') {
-      run = 1;
-      run_carte = true;
+      run = 2;
     }
   }
-  //save le fichier SVG
-  if (key == 'r') {
-    getsvg = loadShape(file);
-    println("saved : "+file);
+  ///keypressed qui permet de saisir uniquement la carte 24 Colonnes ou 40 colonnes
+  if (run==2){
+    if(typing1 !=""){ //condition pour rentrer un caractère obligatoirement
+      if (key == '\n'){ //Si "entrer" -> lancer la fonction pour générer la carte
+        saved1 = typing1;//le texte tapé devient le texte enregistré
+        number1 = Integer.parseInt(saved1);
+        run = 3;
+        run_carte = true;
+      }
+    }
   }
-  if (run==1){
+  if (key >='1' && key <= '2') { //permet de ne choisir le type de carte
+        typing1 = typing1 + key;
+  }
+  else if (key == BACKSPACE && typing1.length() > 0) { // else if qui permet de delete le nombre en cas d'erreur
+        typing1 = typing1.substring(0, typing1.length()-1);
+  }
+  //Keypressed qui permet de saisir le numéro de fichier à traduire
+  if (run==3){
     if(typing !=""){ //condition pour rentrer un caractère obligatoirement
       if (key == '\n'){ //Si "entrer" -> lancer la fonction pour générer la carte
         run_translate = true;
@@ -301,14 +429,19 @@ public void keyPressed(){
         number = Integer.parseInt(saved); //convertion string -> int
         run_findText = true; //boolean qui active la recherche du fichier
       }
-    }
-    if (key >='0' && key <= len_data.charAt(0)) { //permet de ne taper que des chiffres de 1 au nombre de fichier dans le data
+  }
+  if (key >='0' && key <= '9') { //permet de ne taper que des chiffres de 1 au nombre de fichier dans le data
         typing = typing + key;
-    }
-    else if (key == BACKSPACE && typing.length() > 0) { // else if qui permet de delete le nombre en cas d'erreur
+  }
+  else if (key == BACKSPACE && typing.length() > 0) { // else if qui permet de delete le nombre en cas d'erreur
         typing = typing.substring(0, typing.length()-1);
-    }
-    if(key==ESC) exit();
+  }
+  //save le fichier SVG
+  if (key == 'r') {
+      getsvg = loadShape(file);
+      println("saved : "+file);
+  }
+  if(key==ESC) exit();
   }
 }
   static public void main(String[] passedArgs) {
