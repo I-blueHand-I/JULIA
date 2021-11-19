@@ -49,15 +49,14 @@ boolean run_carte = true;
 boolean run_translate = false;
 boolean run_findText = false;
 //Variable fonction TypeCard
+int number;//variable int du chiffre rentré dans consoleText
 String typing1 ="";
 String saved1 = "";
 //variable de la fonction list
-String len_data; // String pour eviter les bugs lors de l'entrée du numéro de fichier
+int number1;//variable int du chiffre rentré dans TypeCard
+String len_data; // String pour eviter les bugs lors de l'entrée du numéro de fichier // à modifier car ne fonctionne pas
 String typing = ""; // Variable du texte tapé
 String saved = ""; //variable convertie en entier : string -> INT
-
-int number;//variable int du chiffre rentré dans consoleText
-int number1;//variable int du chiffre rentré dans TypeCard
 
 void settings() {
   H = (rows*cellSizeHeight)+(6*cellSizeHeight);
@@ -101,19 +100,17 @@ void draw() {
       break;
   }
 }
-//fonction menu//
 void menu() {
   background(0);
   image(julia,75,70);
-  drawfont();
+  drawfont(); //fonction menu//
 }
-//FONCTION POUR TITRE ET TEXTE CLIGNOTANT
-void textFade ()  {
+void textFade () {
  if(millis() > timeInterval + timePast) {
  timePast = millis();
  textFade *= -1;
    }
-   textAlpha += textFade;
+   textAlpha += textFade; //Fcontion texte clignotant
 }
 void drawfont () {
  //textFont (font);
@@ -126,14 +123,14 @@ void drawfont () {
  text("pour commencer",260, 700);
  }
  ///////////////////////////////////////////
- //tracer la carte perforée
-void explication() {
+ //tracer la carte perforée  //Fcontion texte clignotant
+void explication() { //fenetre 2 qui donne les explications sur le programme
   background(0);
   textFont(f2);
   fill(255);
   text("Julia est un programme developpé en 2021.\nSon objectif est de traduire le texte de votre choix\nen Jacquard de deux couleurs.\nPlacez votre fichier .txt\ndans le dossier data de l'application.\nAppuyez sur espace pour continuer.",100,350);
 }
-void TypeCard() {
+void TypeCard() { //fonction qui permet de choisir le type de carte
   background(0);
   textFont(f1);
   fill(255);
@@ -144,8 +141,7 @@ void TypeCard() {
   image(carte2,350,510);
   text("Type de carte : " +typing1 ,520,50);
 }
-//fonction qui permet de rentrer le text à traduire
-void consoleText(){
+void consoleText(){ //fonction qui permet de choisir le texte à traduire
   background(0);
   fill(255);
   textFont(f2);
@@ -156,15 +152,15 @@ void consoleText(){
   else if (number1 ==2){ //bool qui definie quel type de carte va etre créee
     run24C = false;
     }
+  //lancer la fonction qui liste tous les fichiers texte
   list();
 }
-//fonction qui lance la réalisation de la carte perforée////
-void translateText(){
+void translateText(){ //fonction qui l'écran de fin et lance la réalisation de la carte perforée////
   background(0);
   fill(255);
   textFont(f2);
   image(icone,0,330); //display image de mami Julia
-  text("Vous avez choisi :"+input0,70,80);
+  text("Vous avez choisi : "+input0,70,80);
   text("Votre carte perforée est dans \nle dossier SVG de l'application.\nLe fichier SVG s'appelle Julia.svg\nVous pouvez utiliser ce fichier pour la découpeuse laser\npour tracer votre carte.\nUtilisez du film polyester en feuille.\nVous en trouverez chez rougié et plé.\nUne fois découpée,\nil faudra insérer la carte dans le métier Jacquard.\nEnfin, demandez à Clément de vous expliquer la suite. ",70,120);
   text("Merci d'avoir utilisé Julia !",300,370);
   text("Appuez sur ECHAP pour quitter",540,30);
@@ -182,8 +178,9 @@ void translateText(){
     }
   }
 }
-//fonction qui liste tout les fichiers présents dans le data
-void list(){
+///fin des fonction d'interfaces///
+///Debut des fonctions de générations///
+void list(){//fonction qui liste tout les fichiers présents dans le data
   // we'll have a look in the data folder
   java.io.File folder = new java.io.File(sketchPath("data"));
   // list the files in the data folder
@@ -209,8 +206,7 @@ void list(){
       }
    }
 }
-//fonction qui génère la carte perforée 24 colonnes
-void matrix() {
+void matrix() {//fonction qui génère la carte perforée 24 colonnes
    output = createWriter("textB.txt");
     //Charger les caractères du fichier en Binaire dans un nouveau fichier txt;
    println(input0);
@@ -289,8 +285,7 @@ void matrix() {
    run_carte = false;
    ///////////////////////////////////////////////////////
 }
-//fonction qui génère la carte perforée 40 colonnes
-void matrix2(){
+void matrix2(){//fonction qui génère la carte perforée 40 colonnes
   output = createWriter("textB.txt");
    //Charger les caractères du fichier en Binaire dans un nouveau fichier txt;
   println(input0);
@@ -372,7 +367,7 @@ void matrix2(){
   run_carte =false;
   ///////////////////////////////////////////////////////
 }
-void keyPressed(){
+void keyPressed(){//tous les keypressed pour utiliser le programme
   //de menu0 -> explication
   if (run==0){
     if (key=='\n'){
@@ -385,6 +380,7 @@ void keyPressed(){
       run = 2;
     }
   }
+  //à optimiiser utiliser seulement Typing sans typing1
   ///keypressed qui permet de saisir uniquement la carte 24 Colonnes ou 40 colonnes
   if (run==2){
     if(typing1 !=""){ //condition pour rentrer un caractère obligatoirement
