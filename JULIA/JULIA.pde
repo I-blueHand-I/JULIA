@@ -27,8 +27,8 @@ PrintWriter output;
 int colls = 24; //nombre de colonnes
 int rows; //nombre de lignes variable en fonction du texte
 // taille des cellules de la carte qui définit la taille de la carte
-int cellSizeWidth = 30;
-int cellSizeHeight = 36;//int(cellSizeWidth*1.1);//hauteur des cellules en focntion de leur largeur coef = 1.1.
+int cellSizeWidth = 13;
+int cellSizeHeight = int(cellSizeWidth*1.1);//int(cellSizeWidth*1.1);//hauteur des cellules en focntion de leur largeur coef = 1.1.
 //Le coeficient est défini en mésurant les dimensions des cases sur la carte analogique
 int H; // taille en fonction du nombre de lignes
 int W; // taille en fonction du nombre de colonnes
@@ -172,8 +172,10 @@ void translateText(){ //fonction qui l'écran de fin et lance la réalisation de
     //si 24C est true alors lancer la carte à 24 colonnes
     if (run40C == true) {
       colls = 40;
-      cellSizeWidth =30;
-      cellSizeHeight =30;
+      cellSizeWidth =14;
+      cellSizeHeight =14;
+      C1 = cellSizeWidth*0.6;//taille cercle de perforation et des colonnes exterieures//
+      C2 = cellSizeWidth*0.8;
       matrix2();
     }
   }
@@ -241,6 +243,7 @@ void matrix() {//fonction qui génère la carte perforée 24 colonnes
    ///////////Tracage des cercles de la carte perforée)/////////////
    ////double ligne en haut et en bas pour garder la continuité de la carte////
    for ( int i =cellSizeWidth*4; i <W-(cellSizeWidth*4); i+=cellSizeWidth ) {
+     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
      pgr.stroke(255,0,0);
      pgr.fill(255);
      pgr.ellipse (i+cellSizeWidth/2, cellSizeHeight/2, C2, C2);
@@ -250,6 +253,7 @@ void matrix() {//fonction qui génère la carte perforée 24 colonnes
    }
    //Colonnes de la carte perforée exterieur a la matrice///
    for ( int i =0; i <H-(cellSizeHeight/2); i+=cellSizeHeight) {
+     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
      pgr.stroke(255,0,0);
      pgr.fill(255);
      pgr.ellipse (cellSizeWidth*3.3, i+cellSizeHeight/2, C1, C1);
@@ -257,6 +261,7 @@ void matrix() {//fonction qui génère la carte perforée 24 colonnes
    }
    //colonnes de points pour engager la carte///
    for ( int i =cellSizeHeight/12; i <H; i+=interC2 ) {
+     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
      pgr.stroke(255,0,0);
      pgr.fill(255);
      pgr.ellipse (cellSizeWidth*1.7, i+cellSizeWidth, C2, C2);
@@ -274,6 +279,7 @@ void matrix() {//fonction qui génère la carte perforée 24 colonnes
        }
        count++;
        if (count>=b.length)count=0;
+       pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
        pgr.stroke(c);
        pgr.fill(255);
        pgr.ellipse((cellSizeWidth*4.5)+(i*cellSizeWidth), (cellSizeHeight*2.5)+(j*cellSizeHeight), C1, C1);
@@ -320,6 +326,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
   ///////////Tracage des cercles de la carte perforée)/////////////
   ////double ligne en haut et en bas pour garder la continuité de la carte////
   for ( int i =cellSizeWidth*4; i <W-(cellSizeWidth*4); i+=cellSizeWidth ) {
+    pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
     pgr.ellipse (i+cellSizeWidth/2, cellSizeHeight/2, C2, C2);
@@ -331,6 +338,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
   }
   //Colonnes de la carte perforée exterieur a la matrice///
   for ( int i =0; i <H-(cellSizeHeight/2); i+=cellSizeHeight) {
+    pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
     pgr.ellipse (cellSizeWidth*2.5, i+cellSizeHeight/2, C1, C1);
@@ -338,6 +346,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
   }
   //colonnes de points pour engager la carte///
   for ( int i =-cellSizeHeight/2; i <H; i+=cellSizeWidth ) {
+    pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
     pgr.ellipse (-cellSizeWidth/8, i+cellSizeWidth, C2, C2);
@@ -355,7 +364,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
       }
       count++;
       if (count>=b.length)count=0;
-
+      pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
       pgr.stroke(c);
       pgr.fill(255);
       pgr.ellipse((cellSizeWidth*4.5)+(i*cellSizeWidth), (cellSizeHeight*3.5)+(j*cellSizeHeight), C2, C2); //xpos,ypos,C1,C1
