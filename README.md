@@ -28,6 +28,7 @@ Jacquard loom was built in 1801 by Joseph Marie Jacquard. It is the first mecani
 **Choose your text**
 <img width="995" alt="choose_text" src="https://user-images.githubusercontent.com/91726252/142731920-75d764dd-f5fb-4e18-a9e3-c2a1ea9a83e7.png">
 
+This the code of the main program
 ```
 import processing.svg.*;
 //image menu && initialisation des polices//
