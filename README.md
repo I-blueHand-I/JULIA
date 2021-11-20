@@ -18,6 +18,16 @@ Jacquard loom was built in 1801 by Joseph Marie Jacquard. It is the first mecani
 
 - Put a .txt file in the data folder
 - Launch the program JULIA.app
+
+**Main menu**
+<img width="992" alt="acceuil" src="https://user-images.githubusercontent.com/91726252/142731916-9c9df6ec-875e-4811-898a-442d901ef60d.png">
+
+**Type of punch card**
+<img width="993" alt="type_carte" src="https://user-images.githubusercontent.com/91726252/142731918-51e40623-8c89-4f23-83e2-d0d170630731.png">
+
+**Choose your text**
+<img width="995" alt="choose_text" src="https://user-images.githubusercontent.com/91726252/142731920-75d764dd-f5fb-4e18-a9e3-c2a1ea9a83e7.png">
+
 ```
 void setup(){
   size();
