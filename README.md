@@ -18,8 +18,8 @@ void draw(){
 ```
 
 2. choose
+![A test image](JULIA.png)
 
-![Processing](Documents/Github/JULIA/JULIA.png)
 
 3. generate
 
