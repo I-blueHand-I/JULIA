@@ -1,6 +1,6 @@
 ## JULIA
 
-JULIA is program developped on 2021.
+JULIA is a french program developped on 2021.
 JULIA translates any texts to a textile of your choice.
 First,your text will be convert binary and then refer to a textile.
 Then, this sequence of 0 and 1 will de refered to a punch card. 
@@ -27,11 +27,6 @@ Jacquard loom was built in 1801 by Joseph Marie Jacquard. It is the first mecani
 
 **Choose your text**
 <img width="995" alt="choose_text" src="https://user-images.githubusercontent.com/91726252/142731920-75d764dd-f5fb-4e18-a9e3-c2a1ea9a83e7.png">
-
-This is the code of the main program
-```
-
-```
 
 ## Print your punch card
 
