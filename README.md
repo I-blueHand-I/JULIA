@@ -1,4 +1,5 @@
-![JULIA](https://user-images.githubusercontent.com/91726252/142708552-bbac0a4e-351a-4a01-a55e-2179e586ebe4.png)
+
+![JULIA](https://user-images.githubusercontent.com/91726252/142708592-618731c0-8aa0-4c95-9ff3-d95e7632cc8a.png)
 
 # Installation
 - clone the repo
