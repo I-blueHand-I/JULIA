@@ -1,4 +1,4 @@
-##JULIA
+## JULIA
 
 JULIA is program developped on 2021.
 JULIA translates any texts to a textile of your choice.
