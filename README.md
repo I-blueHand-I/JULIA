@@ -1,3 +1,5 @@
+![JULIA](https://user-images.githubusercontent.com/91726252/142708552-bbac0a4e-351a-4a01-a55e-2179e586ebe4.png)
+
 # Installation
 - clone the repo
 
@@ -18,9 +20,10 @@ void draw(){
 ```
 
 2. choose
-![A test image](JULIA.png)
+
 
 
 3. generate
+
 
 
