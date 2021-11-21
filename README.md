@@ -24,6 +24,7 @@ Jacquard loom was built in 1801 by Joseph Marie Jacquard. It is the first mecani
 
 **Type of punch card**
 <img width="993" alt="type_carte" src="https://user-images.githubusercontent.com/91726252/142731918-51e40623-8c89-4f23-83e2-d0d170630731.png">
+Choose your type of punch card. There is a 24 dots punch card from Brother Singer or a 40 dots PASSAP punch card. 
 
 **Choose your text**
 <img width="995" alt="choose_text" src="https://user-images.githubusercontent.com/91726252/142731920-75d764dd-f5fb-4e18-a9e3-c2a1ea9a83e7.png">
@@ -43,7 +44,7 @@ Adjust the width of your form to :
 Please make sure width and height are linked in your software.
 
 Then, bring the svg file to a trottec laser printing to print your punched card.
-**Use this material : Film polyester 75µ A1**
+**Use this material : Film polyester 75µ**
 
 
 
