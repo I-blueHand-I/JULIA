@@ -45,15 +45,15 @@ PrintWriter output;
 int colls = 24; //nombre de colonnes
 int rows; //nombre de lignes variable en fonction du texte
 // taille des cellules de la carte qui définit la taille de la carte
-float cellSizeWidth = 13;
-float cellSizeHeight = PApplet.parseInt(cellSizeWidth*1.1f);//int(cellSizeWidth*1.1);//hauteur des cellules en focntion de leur largeur coef = 1.1.
+int cellSizeWidth = 13;
+int cellSizeHeight = PApplet.parseInt(cellSizeWidth*1.1f);//int(cellSizeWidth*1.1);//hauteur des cellules en focntion de leur largeur coef = 1.1.
 //Le coeficient est défini en mésurant les dimensions des cases sur la carte analogique
-float H; // taille en fonction du nombre de lignes
-float W; // taille en fonction du nombre de colonnes
+int H; // taille en fonction du nombre de lignes
+int W; // taille en fonction du nombre de colonnes
 ////variables des cercles////
 float C1 = cellSizeWidth*0.6f;//taille cercle de perforation et des colonnes exterieures//
 float C2 = cellSizeWidth*0.8f;//taille cercle d'engagement et de continuité
-float interC2 = cellSizeHeight*2; //variables d'espacement entre les C2
+int interC2 = cellSizeHeight*2; //variables d'espacement entre les C2
 ///variables texte perforé////
 int c;//défnir la couleur des cercles ( Blancs ou noirs)
 byte b[];//données du texte
@@ -198,7 +198,6 @@ public void translateText(){ //fonction qui l'écran de fin et lance la réalisa
     }
   }
 }
-////andre est trop cool////
 ///fin des fonction d'interfaces///
 ///Debut des fonctions de générations///
 public void list(){//fonction qui liste tout les fichiers présents dans le data

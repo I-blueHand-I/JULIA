@@ -180,7 +180,6 @@ void translateText(){ //fonction qui l'écran de fin et lance la réalisation de
     }
   }
 }
-////andre est trop cool////
 ///fin des fonction d'interfaces///
 ///Debut des fonctions de générations///
 void list(){//fonction qui liste tout les fichiers présents dans le data
