@@ -38,9 +38,9 @@ Open Julia.svg file in Inkscape or adobe Illustrator. Check if the stroke weight
 Check if your stroke are red : rvb(255,0,0)
 Adjust the width of your form to :
 - **133 mm for the 24 colls punch card.**
-- **235 mm for the 40 colls punch card.**
+- **241 mm for the 40 colls punch card.**
 <img width="239" alt="change_width_133" src="https://user-images.githubusercontent.com/91726252/142735256-52d0aec4-1586-4163-950d-7048eb91763a.png">
-<img width="242" alt="change_width" src="https://user-images.githubusercontent.com/91726252/142735195-c588fac3-d068-41c2-86e3-3368e62ea011.png">
+mettre photo 241 mm
 Please make sure width and height are linked in your software.
 
 Then, bring the svg file to a trottec laser printing to print your punched card.
