@@ -135,11 +135,13 @@ void TypeCard() { //fonction qui permet de choisir le type de carte
   textFont(f1);
   fill(255);
   //display text & images des différents type de carte
-  text("1 : carte 24 colonnes",250,200);
-  image(carte1,350,230);
-  text("2 : carte 40 colonnes",250,480);
-  image(carte2,350,510);
+  text("1 : carte 24 colonnes",250,150);
+  image(carte1,350,180);
+  text("2 : carte 40 colonnes",250,430);
+  image(carte2,350,460);
   text("Type de carte : " +typing1 ,520,50);
+  textFont(f2);
+  text("Entrez le type de carte que vous souhaitez\net appuyez sur ENTER",30,730);
 }
 void consoleText(){ //fonction qui permet de choisir le texte à traduire
   background(0);
