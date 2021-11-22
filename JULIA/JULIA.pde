@@ -338,7 +338,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
     pgr.ellipse (i+cellSizeWidth/2, H-(cellSizeHeight*2.5), C2, C2);
   }
   //Colonnes de la carte perforée exterieur a la matrice///
-  for ( int i =0; i <H-(cellSizeHeight/2); i+=cellSizeHeight) {
+  for ( int i =-cellSizeWidth/2; i <H-(cellSizeHeight/2); i+=cellSizeHeight) {
     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
@@ -346,12 +346,12 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
     pgr.ellipse (W-(cellSizeWidth*2.5), i+cellSizeHeight/2, C1, C1);
   }
   //colonnes de points pour engager la carte///
-  for ( int i =-cellSizeHeight/2; i <H; i+=cellSizeWidth ) {
+  for ( int i =0; i <H; i+=cellSizeWidth ) {
     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
-    pgr.ellipse (-cellSizeWidth/8, i+cellSizeWidth, C2, C2);
-    pgr.ellipse (W+cellSizeWidth/8, i+cellSizeWidth, C2, C2);
+    pgr.ellipse (cellSizeWidth/4, i+cellSizeWidth, C2, C2);
+    pgr.ellipse (W-cellSizeWidth/4, i+cellSizeWidth, C2, C2);
   }
   ////////Perforation de la carte en fonction du texte/////////////
   count = 0;
