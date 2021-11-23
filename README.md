@@ -43,18 +43,10 @@ Adjust the width of your form to :
 <img width="245" alt="changewidth_241" src="https://user-images.githubusercontent.com/91726252/143034538-d35934b8-ce34-4711-9fe8-f11b780fc35e.png">
 
 Please make sure width and height are linked in your software.
-
 Then, bring the svg file to a trottec laser printing to print your punched card.
 **Use this material : Film polyester 75µ**
 
-
-
-
-
-
-
-
-
-
+![decoupe2](https://user-images.githubusercontent.com/91726252/143052891-2eed9bdd-45ef-44b7-9484-b329c2f5dce8.png)
+![decoupe1](https://user-images.githubusercontent.com/91726252/143052884-74ffb4fd-927d-4c26-9b70-86f512d1a68f.png)
 
 
