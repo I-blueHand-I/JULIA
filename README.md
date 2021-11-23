@@ -26,11 +26,11 @@ First Julia reads all the .txt files in the data folder. Then, Julia converts a 
 **Main menu**
 <img width="992" alt="acceuil" src="https://user-images.githubusercontent.com/91726252/142731916-9c9df6ec-875e-4811-898a-442d901ef60d.png">
 
-**Type of punch card**
+**Select your punch card**
 <img width="993" alt="type_carte" src="https://user-images.githubusercontent.com/91726252/142731918-51e40623-8c89-4f23-83e2-d0d170630731.png">
 Choose your type of punch card. There is a 24 dots punch card from Brother Singer or a 40 dots PASSAP punch card. 
 
-**Choose your text**
+**Select your text**
 <img width="995" alt="choose_text" src="https://user-images.githubusercontent.com/91726252/142731920-75d764dd-f5fb-4e18-a9e3-c2a1ea9a83e7.png">
 
 ## Print your punch card
