@@ -42,7 +42,7 @@ Install Inkscape or illustrator : https://inkscape.org/release/inkscape-1.1.1/.
 
 Julia.svg is in the folder SVG of JULIA folder.
 Open Julia.svg file in Inkscape or adobe Illustrator. Check if the stroke weight is 0.01 mm.
-Check if strokes are red : rvb(255,0,0)
+Check if strokes are red : RVB(255,0,0)
 Adjust the width of your form to :
 - **133 mm for the 24 colls punch card.**
 - **241 mm for the 40 colls punch card.**
