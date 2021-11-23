@@ -19,6 +19,10 @@ Jacquard loom was built in 1801 by Joseph Marie Jacquard. It is the first mecani
 - Put a .txt file in the data folder
 - Launch the program JULIA.app
 
+**Software**
+
+First Julia reads all the .txt files in the data folder. Then, Julia converts a text from a .txt file from the data folder to a binary String. This function generates a .txt "textB.txt" and print the binary Strings in this file. After that, the last function call matrix() or matrix2() draws in Pgraphics a matrix of ellipse. They are colls of ellipses on the side and top of the card. Those will be allways  at the same place for every text. Between those colls there is ellipse corresping to your text in binary. 
+
 **Main menu**
 <img width="992" alt="acceuil" src="https://user-images.githubusercontent.com/91726252/142731916-9c9df6ec-875e-4811-898a-442d901ef60d.png">
 
@@ -49,6 +53,7 @@ Please make sure width and height are linked in your software.
 Then, bring the svg file to a trottec laser printing to print your punched card.
 **Use this material : Film polyester 75µ**
 
+These are pictures next to trottec printing for a 40 colls PASSAP card. 
 ![decoupe2](https://user-images.githubusercontent.com/91726252/143052891-2eed9bdd-45ef-44b7-9484-b329c2f5dce8.png)
 ![decoupe1](https://user-images.githubusercontent.com/91726252/143052884-74ffb4fd-927d-4c26-9b70-86f512d1a68f.png)
 
