@@ -49,6 +49,12 @@ Adjust the width of your form to :
 <img width="239" alt="change_width_133" src="https://user-images.githubusercontent.com/91726252/142735256-52d0aec4-1586-4163-950d-7048eb91763a.png">
 <img width="245" alt="changewidth_241" src="https://user-images.githubusercontent.com/91726252/143034538-d35934b8-ce34-4711-9fe8-f11b780fc35e.png">
 
+Trottec Settings : 
+use paper default settings 
+power : 65-70 adujustable
+speed : 20
+
+
 Please make sure width and height are linked in your software.
 Then, bring the svg file to a trottec laser printing to print your punched card.
 **Use this material : Film polyester 75µ**
