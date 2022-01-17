@@ -51,7 +51,7 @@ Adjust the width of your form to :
 
 Trottec Settings : 
 - Use paper default settings 
-- power : 65-70 adujustable
+- power : 65-70 adjustable
 - speed : 20
 
 
