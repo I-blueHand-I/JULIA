@@ -50,9 +50,9 @@ Adjust the width of your form to :
 <img width="245" alt="changewidth_241" src="https://user-images.githubusercontent.com/91726252/143034538-d35934b8-ce34-4711-9fe8-f11b780fc35e.png">
 
 Trottec Settings : 
--Use paper default settings 
--power : 65-70 adujustable
--speed : 20
+- Use paper default settings 
+- power : 65-70 adujustable
+- speed : 20
 
 
 Please make sure width and height are linked in your software.
