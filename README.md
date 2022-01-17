@@ -66,7 +66,7 @@ These are pictures next to trottec printing for a 40 colls PASSAP card.
 Now that the punch card is printed we can use it in a knittinig machine. It will read mechanicaly the binary on the punch card. 
 We have the binary scarf with the initial text on it. 
 
-![expo_rotonde](https://user-images.githubusercontent.com/91726252/149786285-bacf54e8-7342-48a0-b001-85b57e171e92.png)
+![expo_rotonde](https://user-images.githubusercontent.com/91726252/149787133-4a23acc0-5cef-463e-bf72-aa29922a1bf7.png)
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
