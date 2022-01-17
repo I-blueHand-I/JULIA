@@ -50,9 +50,9 @@ Adjust the width of your form to :
 <img width="245" alt="changewidth_241" src="https://user-images.githubusercontent.com/91726252/143034538-d35934b8-ce34-4711-9fe8-f11b780fc35e.png">
 
 Trottec Settings : 
--Use paper default settings 
--power : 65-70 adujustable
--speed : 20
+- Use paper default settings 
+- power : 65-70 adjustable
+- speed : 20
 
 
 Please make sure width and height are linked in your software.
@@ -64,7 +64,7 @@ These are pictures next to trottec printing for a 40 colls PASSAP card.
 ![dclassic 2022-01-11 183953 838](https://user-images.githubusercontent.com/91726252/149783546-4710dcdf-2eb5-4e4f-b9d4-b59fe2e556d6.JPG)
 
 Now that the punch card is printed we can use it in a knittinig machine. It will read mechanicaly the binary on the punch card. 
-We have the binary scarf with the initial text on it. 
+We have the binary scarf with the initial text translated in jacquard on it. 
 
 ![expo_rotonde](https://user-images.githubusercontent.com/91726252/149787133-4a23acc0-5cef-463e-bf72-aa29922a1bf7.png)
 
