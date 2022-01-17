@@ -326,7 +326,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
   pgr.beginDraw();
   ///////////Tracage des cercles de la carte perforée)/////////////
   ////double ligne en haut et en bas pour garder la continuité de la carte////
-  for ( int i =cellSizeWidth*4; i <W-(cellSizeWidth*4); i+=cellSizeWidth ) {
+  for (int i =cellSizeWidth*4; i <W-(cellSizeWidth*4); i+=cellSizeWidth) {
     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
