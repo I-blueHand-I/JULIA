@@ -67,8 +67,6 @@ Now that the punch card is printed we can use it in a knittinig machine. It will
 We have the binary scarf with the initial text on it. 
 
 ![expo_rotonde](https://user-images.githubusercontent.com/91726252/149787133-4a23acc0-5cef-463e-bf72-aa29922a1bf7.png)
-![IMG_3678 2](https://user-images.githubusercontent.com/91726252/149787300-6bfb1c40-1606-4eb8-b581-ecdadcfc59d1.JPG)
-
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
