@@ -61,7 +61,7 @@ String saved = ""; //variable convertie en entier : string -> INT
 void settings() {
   H = (rows*cellSizeHeight)+(6*cellSizeHeight);
   W = (colls*cellSizeWidth)+(8*cellSizeWidth);
-  size (1000, 800, P3D);
+  size (1000, 800);
 }
 void setup() {
   background(0);
