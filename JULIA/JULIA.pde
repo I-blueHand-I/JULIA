@@ -61,7 +61,7 @@ String saved = ""; //variable convertie en entier : string -> INT
 void settings() {
   H = (rows*cellSizeHeight)+(6*cellSizeHeight);
   W = (colls*cellSizeWidth)+(8*cellSizeWidth);
-  size (1000, 800);
+  size (1000, 800); //P3D n'est pas nécéssaire, de plus il est incompatible avec la derniere version du mac MOnteray
 }
 void setup() {
   background(0);
