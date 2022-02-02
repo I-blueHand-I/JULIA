@@ -338,7 +338,7 @@ void matrix2(){//fonction qui génère la carte perforée 40 colonnes
     pgr.ellipse (i+cellSizeWidth/2, H-(cellSizeHeight*2.5), C2, C2);
   }
   //Colonnes de la carte perforée exterieur a la matrice///
-  for ( int i =-cellSizeWidth/2; i <H-(cellSizeHeight/2); i+=cellSizeHeight) {
+  for ( int i =-cellSizeWidth/2; i <H-(cellSizeHeight/2); i+=cellSizeHeight*1.07143) {
     pgr.strokeWeight(0.03); //épaisseur de découpe 0.01 mm
     pgr.stroke(255,0,0);
     pgr.fill(255);
