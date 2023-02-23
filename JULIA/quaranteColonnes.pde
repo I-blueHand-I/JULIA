@@ -79,7 +79,7 @@ void matrix2() {//fonction qui génère la carte perforée 40 colonnes
 
       pgr.stroke(c);
       pgr.fill(255);
-      pgr.ellipse((cellSizeWidth*4.5)+(i*cellSizeWidth), (cellSizeHeight*3.5)+(j*cellSizeHeight*1.07143), C2, C2); //xpos,ypos,C1,C1
+      pgr.ellipse((cellSizeWidth*4.5)+(i*cellSizeWidth), (cellSizeHeight*3.5)+(j*cellSizeHeight*1.07143), C2, C2); //xpos,ypos,C1,C1 //change the decimal value to adapt
     }
   }
   /////////////////////////////////////////////////////////
